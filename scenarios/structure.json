@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Git Quiz Théorique",
+    "description": "QCM de positionnement sur les prérequis (Linux, réseau, virtualisation, scripting) et les bases de Git",
+    "path": "git-quiz-theorique"
+  },
+  {
+    "title": "Git Hands-On",
+    "description": "Pratique Git dans le terminal Ubuntu : init, commits, branches et résolution de conflits",
+    "path": "git-hands-on"
+  }
+]
