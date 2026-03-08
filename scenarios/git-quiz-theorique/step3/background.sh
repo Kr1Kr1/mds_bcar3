@@ -90,10 +90,19 @@ QUIZ_EOF
 chmod +x /root/quiz_step3.sh
 
 # ── Bilan final + envoi Google Sheets ─────────────────────────────────────────
+
+# ── Bilan final + envoi Google Sheets ─────────────────────────────────────────
 cat > /root/quiz_results.sh << 'RESULTS_EOF'
 #!/bin/bash
 WEBHOOK="https://script.google.com/macros/s/AKfycby4eksr3TCtLJp71SSK9bG11yfx2aHfvydlJaS3RcKQkq_QKu5nI52FQgjkpNS6VKwb/exec"
 CYAN='\033[0;36m'; GREEN='\033[0;32m'; RED='\033[0;31m'; YELLOW='\033[1;33m'; NC='\033[0m'
+
+# Lecture du pseudo
+PSEUDO=$(cat /tmp/quiz_pseudo.txt 2>/dev/null | xargs)
+if [ -z "$PSEUDO" ]; then
+  echo -e "${RED}⚠ Identification manquante. Retournez à l'étape 1 et lancez : bash /root/set_pseudo.sh${NC}"
+  PSEUDO="anonyme"
+fi
 
 # Vérification que tous les quizzes ont été complétés
 missing=0
@@ -143,6 +152,7 @@ echo ""
 echo -e "${CYAN}╔══════════════════════════════════════════╗"
 echo -e "║     BILAN DU QCM DE POSITIONNEMENT      ║"
 echo -e "╚══════════════════════════════════════════╝${NC}"
+echo -e "  Étudiant : ${YELLOW}$PSEUDO${NC}"
 echo ""
 echo -e "  Étape 1 — Git (concepts & technique)    ${YELLOW}$s1/8${NC}  $(bar $s1 8)"
 echo -e "  Étape 2 — Docker (concepts & technique) ${YELLOW}$s2/8${NC}  $(bar $s2 8)"
@@ -160,10 +170,12 @@ fi
 echo ""
 echo -ne "  Envoi des résultats au formateur... "
 MACHINE=$(hostname)
+# Echapper le pseudo pour le JSON (suppression des guillemets éventuels)
+PSEUDO_SAFE=$(echo "$PSEUDO" | tr -d '"\\')
 HTTP=$(curl -s -o /tmp/webhook_resp.txt -w "%{http_code}" -L \
   -X POST "$WEBHOOK" \
   -H "Content-Type: application/json" \
-  -d "{\"hostname\":\"$MACHINE\",\"s1\":$s1,\"s2\":$s2,\"s3\":$s3,\"total\":$total}" \
+  -d "{\"pseudo\":\"$PSEUDO_SAFE\",\"hostname\":\"$MACHINE\",\"s1\":$s1,\"s2\":$s2,\"s3\":$s3,\"total\":$total}" \
   2>/dev/null)
 
 if [ "$HTTP" = "200" ]; then

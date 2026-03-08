@@ -2,9 +2,15 @@
 # QCM de positionnement — toujours validé, score affiché à titre indicatif
 ANSWER_FILE="/tmp/quiz_step1.txt"
 
+if [ ! -f "/tmp/quiz_pseudo.txt" ] || [ -z "$(cat /tmp/quiz_pseudo.txt 2>/dev/null | xargs)" ]; then
+  echo "ERREUR : identification manquante."
+  echo "Lancez d'abord : bash /root/set_pseudo.sh"
+  exit 1
+fi
+
 if [ ! -f "$ANSWER_FILE" ]; then
   echo "ERREUR : Quiz non complété."
-  echo "Lancez d'abord : bash /root/quiz_step1.sh"
+  echo "Lancez : bash /root/quiz_step1.sh"
   exit 1
 fi
 
@@ -15,5 +21,6 @@ if [ "${#answers[@]}" -ne 8 ]; then
   exit 1
 fi
 
-echo "✓ Quiz complété — bilan à l'étape finale."
+PSEUDO=$(cat /tmp/quiz_pseudo.txt | xargs)
+echo "✓ Identifié(e) : $PSEUDO — Quiz complété. Bilan à l'étape finale."
 exit 0

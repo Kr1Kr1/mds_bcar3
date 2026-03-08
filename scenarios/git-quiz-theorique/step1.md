@@ -2,7 +2,15 @@
 
 Ces questions portent sur la **valeur** de Git, ses concepts fondamentaux et quelques commandes clés.
 
-## Lancer le quiz
+## 0. S'identifier d'abord
+
+`bash /root/set_pseudo.sh`{{exec}}
+
+> Entrez votre **prénom et nom** — ils seront envoyés au formateur avec vos résultats.
+
+---
+
+## 1. Lancer le quiz
 
 `bash /root/quiz_step1.sh`{{exec}}
 

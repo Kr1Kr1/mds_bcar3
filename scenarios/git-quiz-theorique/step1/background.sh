@@ -1,7 +1,37 @@
 #!/bin/bash
-# Crée /root/quiz_step1.sh — Git : concepts & pourquoi (8 questions)
+# Crée /root/set_pseudo.sh + /root/quiz_step1.sh — Git : concepts & pourquoi (8 questions)
 # Réponses correctes : Q1=2 Q2=3 Q3=2 Q4=2 Q5=3 Q6=2 Q7=3 Q8=2
 
+# ── Identification de l'étudiant ───────────────────────────────────────────────
+cat > /root/set_pseudo.sh << 'PSEUDO_EOF'
+#!/bin/bash
+PSEUDO_FILE="/tmp/quiz_pseudo.txt"
+CYAN='\033[0;36m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'; RED='\033[0;31m'; NC='\033[0m'
+
+echo -e "${CYAN}════════════════════════════════════════════════"
+echo -e "  Identification — QCM de positionnement"
+echo -e "════════════════════════════════════════════════${NC}"
+echo ""
+echo -e "${YELLOW}Entrez votre prénom et nom (ex : Marie Dupont) :${NC}"
+
+while true; do
+  echo -n "> "
+  read -r pseudo
+  pseudo="$(echo "$pseudo" | xargs)"
+  if [ -n "$pseudo" ]; then
+    echo "$pseudo" > "$PSEUDO_FILE"
+    echo ""
+    echo -e "${GREEN}✓ Bonjour $pseudo ! Vous pouvez lancer le quiz.${NC}"
+    echo ""
+    break
+  fi
+  echo -e "${RED}Nom vide. Veuillez entrer votre prénom et nom.${NC}"
+done
+PSEUDO_EOF
+
+chmod +x /root/set_pseudo.sh
+
+# ── Quiz étape 1 ───────────────────────────────────────────────────────────────
 cat > /root/quiz_step1.sh << 'QUIZ_EOF'
 #!/bin/bash
 ANSWER_FILE="/tmp/quiz_step1.txt"
