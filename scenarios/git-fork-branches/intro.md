@@ -20,7 +20,7 @@ cloner un dépôt existant, créer des branches, maîtriser le staging et pousse
 
 ## Pré-requis
 
-- Git est déjà installé et configuré sur cette machine
-- Le "dépôt distant" (`first-day-c.git`) est en cours de préparation en arrière-plan
+- Un terminal Linux (fourni par Killercoda)
+- L'environnement sera initialisé à la première étape via un script de setup
 
-Quand l'environnement est prêt, passez à l'**Étape 1**.
+Passez à l'**Étape 1** pour démarrer.

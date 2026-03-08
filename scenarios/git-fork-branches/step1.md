@@ -1,11 +1,12 @@
 # Étape 1 — Cloner et explorer les branches
 
-## 1. Vérifier que le dépôt distant est prêt
+## 1. Initialiser l'environnement
 
-`ls /root/first-day-c.git`{{exec}}
+Lancez le script de setup (installation de git + création du dépôt simulé) :
 
-> Vous devriez voir les répertoires d'un dépôt Git bare (`HEAD`, `branches`, `objects`...).
-> Si le dossier est vide, attendez quelques secondes et relancez.
+`bash /root/setup-git.sh`{{exec}}
+
+> Attendez le message `✓ Environnement prêt !` avant de continuer.
 
 ---
 
