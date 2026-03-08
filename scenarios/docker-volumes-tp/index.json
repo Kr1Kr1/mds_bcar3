@@ -1,0 +1,43 @@
+{
+  "title": "Docker Volumes — TP",
+  "description": "Volumes nommés, persistance des données, bind mounts, instruction VOLUME et architecture HAProxy avec montages hôte.",
+  "intro": {
+    "text": "intro.md",
+    "background": "intro.background.sh"
+  },
+  "details": {
+    "steps": [
+      {
+        "title": "Volumes nommés — création et persistance",
+        "text": "step1.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Cycle de vie — suppression des volumes",
+        "text": "step2.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Bind mounts — monter un dossier hôte",
+        "text": "step3.md",
+        "verify": "step3/verify.sh"
+      },
+      {
+        "title": "Instruction VOLUME dans un Dockerfile",
+        "text": "step4.md",
+        "verify": "step4/verify.sh"
+      },
+      {
+        "title": "HAProxy avec bind mounts",
+        "text": "step5.md",
+        "verify": "step5/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}

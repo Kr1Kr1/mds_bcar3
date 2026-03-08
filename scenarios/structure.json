@@ -29,6 +29,21 @@
       "title": "Docker Réseau — TP",
       "description": "Bridge par défaut, réseaux personnalisés, connexion multi-réseau, port mapping et load balancing avec HAProxy.",
       "path": "docker-reseau-tp"
+    },
+    {
+      "title": "Docker Volumes — TP",
+      "description": "Volumes nommés, persistance des données, bind mounts, instruction VOLUME et architecture HAProxy avec montages hôte.",
+      "path": "docker-volumes-tp"
+    },
+    {
+      "title": "Docker Compose — TP",
+      "description": "Orchestrer des stacks multi-services avec Docker Compose : volumes, réseaux, variables d'environnement et scaling.",
+      "path": "docker-compose-tp"
+    },
+    {
+      "title": "Docker Swarm — TP",
+      "description": "Initialiser un cluster Swarm, déployer des services replicated et global, visualiser le cluster, simuler une maintenance et déployer une stack multi-services.",
+      "path": "docker-swarm-tp"
     }
   ]
 }
