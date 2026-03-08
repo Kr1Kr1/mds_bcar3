@@ -1,6 +1,6 @@
 #!/bin/bash
-# Crée /root/quiz_step2.sh — Docker : concepts & pourquoi
-# Réponses correctes : Q1=2 Q2=2 Q3=3 Q4=3 Q5=2
+# Crée /root/quiz_step2.sh — Docker : concepts & pourquoi (8 questions)
+# Réponses correctes : Q1=2 Q2=2 Q3=3 Q4=3 Q5=2 Q6=2 Q7=2 Q8=2
 
 cat > /root/quiz_step2.sh << 'QUIZ_EOF'
 #!/bin/bash
@@ -32,6 +32,8 @@ ask() {
   done
 }
 
+# ── Conceptuelles ──────────────────────────────────────────────────────────────
+
 ask "Q1. Quel problème Docker résout-il principalement ?" \
   "La lenteur des requêtes SQL" \
   "Le syndrome 'ça marche sur ma machine' : garantir le même environnement partout" \
@@ -61,6 +63,26 @@ ask "Q5. Pourquoi Docker Compose est-il utile ?" \
   "Pour définir et orchestrer plusieurs conteneurs interdépendants en un seul fichier déclaratif" \
   "Pour publier automatiquement une image sur Docker Hub" \
   "Pour compiler et optimiser le code source d'une application"
+
+# ── Techniques ─────────────────────────────────────────────────────────────────
+
+ask "Q6. Que signifie l'instruction 'FROM ubuntu:22.04' dans un Dockerfile ?" \
+  "Télécharger Ubuntu 22.04 sur le système hôte" \
+  "Définir l'image de base à partir de laquelle cette image sera construite" \
+  "Lancer un conteneur Ubuntu au démarrage du service" \
+  "Mettre à jour l'OS Ubuntu du serveur hôte"
+
+ask "Q7. À quoi sert le flag '-p 8080:80' dans la commande 'docker run -p 8080:80 monimage' ?" \
+  "Limiter le conteneur à 80 Mo de RAM et 8080 Ko de CPU" \
+  "Mapper le port 80 du conteneur sur le port 8080 de la machine hôte" \
+  "Créer deux conteneurs sur les ports 80 et 8080 simultanément" \
+  "Restreindre l'accès au conteneur aux ports 80 et 8080"
+
+ask "Q8. Que se passe-t-il si on fait 'docker rm' sur un conteneur sans volume configuré ?" \
+  "L'image de base est supprimée du système" \
+  "Les données écrites à l'intérieur du conteneur sont définitivement perdues" \
+  "Docker sauvegarde automatiquement les données avant la suppression" \
+  "Seul le nom du conteneur est libéré, les données restent intactes"
 
 echo -e "${CYAN}✓ Quiz terminé ! Cliquez sur 'Check' pour valider.${NC}"
 QUIZ_EOF

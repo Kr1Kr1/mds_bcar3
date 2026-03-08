@@ -1,6 +1,6 @@
 # Étape 3 — Git + Docker : vision d'ensemble
 
-Ces questions portent sur l'**articulation** des deux outils dans un contexte professionnel.
+Ces questions portent sur l'**articulation** des deux outils dans un contexte professionnel réel.
 
 ## Lancer le quiz
 
@@ -15,7 +15,7 @@ Ces questions portent sur l'**articulation** des deux outils dans un contexte pr
 **Git + Docker : le duo SysOps**
 
 ```
-Code source  →  git commit  →  git push  →  docker build  →  déploiement
+Code source  →  git commit  →  git push  →  docker build  →  registry  →  déploiement
 ```
 
 - **Git** versionne le code ET l'infrastructure (Dockerfile, docker-compose.yml)
@@ -28,8 +28,27 @@ Code source  →  git commit  →  git push  →  docker build  →  déploiemen
 
 **Registry = le "GitHub des images"**
 - Docker Hub, GitLab Registry, Harbor...
-- Stocke et distribue les images Docker versionnées
+- Stocke et distribue les images Docker versionnées (comme Git pour le code)
+
+**Optimisations build**
+
+| Mécanisme | Intérêt |
+|-----------|---------|
+| `.dockerignore` | Exclut des fichiers du contexte envoyé au daemon (`node_modules`, `.git`...) → build plus rapide |
+| **Multi-stage build** | Sépare l'environnement de compilation et l'image finale → image plus légère |
+| **Cache des layers** | Docker réutilise les couches non modifiées → rebuild incrémental |
+
+**CI/CD : le déclencheur**
+> Un `git push` sur `main` (ou une MR approuvée) déclenche automatiquement :
+> `test → docker build → push registry → déploiement`
+
+**Compose vs Swarm**
+
+| Outil | Portée |
+|-------|--------|
+| **Docker Compose** | Orchestration sur **une seule machine** (dev, staging) |
+| **Docker Swarm** | Orchestration sur un **cluster** de plusieurs machines (production) |
 
 ---
 
-Quand vous avez répondu aux 5 questions, cliquez sur **Check**.
+Quand vous avez répondu aux 8 questions, cliquez sur **Check**.

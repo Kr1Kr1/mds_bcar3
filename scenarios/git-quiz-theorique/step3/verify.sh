@@ -10,8 +10,8 @@ fi
 
 mapfile -t answers < "$ANSWER_FILE"
 
-if [ "${#answers[@]}" -ne 5 ]; then
-  echo "ERREUR : Quiz incomplet (${#answers[@]}/5 réponses). Relancez : bash /root/quiz_step3.sh"
+if [ "${#answers[@]}" -ne 8 ]; then
+  echo "ERREUR : Quiz incomplet (${#answers[@]}/8 réponses). Relancez : bash /root/quiz_step3.sh"
   exit 1
 fi
 

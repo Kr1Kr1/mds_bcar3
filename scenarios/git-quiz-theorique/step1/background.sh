@@ -1,6 +1,6 @@
 #!/bin/bash
-# Crée /root/quiz_step1.sh — Git : concepts & pourquoi
-# Réponses correctes : Q1=2 Q2=3 Q3=2 Q4=2 Q5=3
+# Crée /root/quiz_step1.sh — Git : concepts & pourquoi (8 questions)
+# Réponses correctes : Q1=2 Q2=3 Q3=2 Q4=2 Q5=3 Q6=2 Q7=3 Q8=2
 
 cat > /root/quiz_step1.sh << 'QUIZ_EOF'
 #!/bin/bash
@@ -32,6 +32,8 @@ ask() {
   done
 }
 
+# ── Conceptuelles ──────────────────────────────────────────────────────────────
+
 ask "Q1. Pourquoi utilise-t-on un système de contrôle de version comme Git ?" \
   "Pour compresser les fichiers du projet" \
   "Pour garder un historique des modifications et collaborer sans écraser le travail des autres" \
@@ -61,6 +63,26 @@ ask "Q5. Dans quelle situation préfère-t-on git merge plutôt que git rebase ?
   "Quand on travaille seul sur une branche locale expérimentale" \
   "Quand on intègre une branche partagée et qu'on veut préserver l'historique des collaborations" \
   "Quand le dépôt distant est vide"
+
+# ── Techniques ─────────────────────────────────────────────────────────────────
+
+ask "Q6. Quel est le rôle de la commande 'git add' ?" \
+  "Créer un nouveau dépôt Git vide" \
+  "Déplacer les modifications dans la zone de staging pour les inclure dans le prochain commit" \
+  "Envoyer les commits vers le dépôt distant" \
+  "Fusionner deux branches"
+
+ask "Q7. Que contient la zone de staging (index) dans Git ?" \
+  "Les fichiers ignorés par Git (listés dans .gitignore)" \
+  "Les commits déjà envoyés sur le remote" \
+  "Les modifications sélectionnées qui seront incluses dans le prochain commit" \
+  "Le journal de toutes les actions Git effectuées"
+
+ask "Q8. Que fait 'git stash' ?" \
+  "Supprime définitivement les fichiers non commités" \
+  "Met de côté les modifications en cours pour retrouver un répertoire de travail propre" \
+  "Envoie les modifications vers une branche distante" \
+  "Affiche l'historique des commits"
 
 echo -e "${CYAN}✓ Quiz terminé ! Cliquez sur 'Check' pour valider.${NC}"
 QUIZ_EOF
