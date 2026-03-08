@@ -73,25 +73,35 @@ cat > /root/quiz_results.sh << 'RESULTS_EOF'
 WEBHOOK="https://script.google.com/macros/s/AKfycby4eksr3TCtLJp71SSK9bG11yfx2aHfvydlJaS3RcKQkq_QKu5nI52FQgjkpNS6VKwb/exec"
 CYAN='\033[0;36m'; GREEN='\033[0;32m'; RED='\033[0;31m'; YELLOW='\033[1;33m'; NC='\033[0m'
 
-CORRECT_1=(2 3 2 2 3)
-CORRECT_2=(2 2 3 3 2)
-CORRECT_3=(2 3 2 2 3)
+# Vérification que tous les quizzes ont été complétés
+missing=0
+for step in 1 2 3; do
+  if [ ! -f "/tmp/quiz_step${step}.txt" ]; then
+    echo -e "${RED}⚠ Étape $step non complétée (quiz_step${step}.sh non exécuté).${NC}"
+    missing=1
+  fi
+done
+if [ "$missing" -eq 1 ]; then
+  echo ""
+  echo "Complétez les étapes manquantes avant d'afficher le bilan."
+  exit 1
+fi
 
-score_step() {
-  local file="$1"
-  local -n correct="$2"
-  if [ ! -f "$file" ]; then echo "0"; return; fi
+# Calcul des scores — sans nameref pour compatibilité bash universelle
+compute_score() {
+  local file="$1"; shift
+  local -a correct=("$@")
   mapfile -t answers < "$file"
   local s=0
   for i in "${!correct[@]}"; do
-    [ "${answers[$i]}" = "${correct[$i]}" ] && ((s++))
+    [ "${answers[$i]:-x}" = "${correct[$i]}" ] && ((s++))
   done
   echo "$s"
 }
 
-s1=$(score_step /tmp/quiz_step1.txt CORRECT_1)
-s2=$(score_step /tmp/quiz_step2.txt CORRECT_2)
-s3=$(score_step /tmp/quiz_step3.txt CORRECT_3)
+s1=$(compute_score /tmp/quiz_step1.txt 2 3 2 2 3)
+s2=$(compute_score /tmp/quiz_step2.txt 2 2 3 3 2)
+s3=$(compute_score /tmp/quiz_step3.txt 2 3 2 2 3)
 total=$((s1 + s2 + s3))
 
 bar() {
@@ -124,17 +134,17 @@ fi
 
 echo ""
 echo -ne "  Envoi des résultats au formateur... "
-HOSTNAME=$(hostname)
+MACHINE=$(hostname)
 HTTP=$(curl -s -o /tmp/webhook_resp.txt -w "%{http_code}" -L \
   -X POST "$WEBHOOK" \
   -H "Content-Type: application/json" \
-  -d "{\"hostname\":\"$HOSTNAME\",\"s1\":$s1,\"s2\":$s2,\"s3\":$s3,\"total\":$total}" \
+  -d "{\"hostname\":\"$MACHINE\",\"s1\":$s1,\"s2\":$s2,\"s3\":$s3,\"total\":$total}" \
   2>/dev/null)
 
 if [ "$HTTP" = "200" ]; then
   echo -e "${GREEN}✓ Envoyé !${NC}"
 else
-  echo -e "${RED}✗ Échec (code $HTTP) — montrez votre écran à votre formateur.${NC}"
+  echo -e "${RED}✗ Échec réseau (code $HTTP).${NC}"
 fi
 echo ""
 RESULTS_EOF
