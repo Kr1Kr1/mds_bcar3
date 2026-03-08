@@ -19,6 +19,11 @@
       "title": "Docker CLI — TP",
       "description": "Installer Docker, manipuler images et conteneurs, maîtriser les commandes essentielles de la CLI.",
       "path": "docker-cli-tp"
+    },
+    {
+      "title": "Docker Images — TP",
+      "description": "Modifier un conteneur, docker commit, Dockerfile, cache de build et optimisation des layers.",
+      "path": "docker-images-tp"
     }
   ]
 }

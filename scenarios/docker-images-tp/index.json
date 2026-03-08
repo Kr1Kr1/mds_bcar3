@@ -1,0 +1,38 @@
+{
+  "title": "Docker Images — TP",
+  "description": "Modifier un conteneur, créer une image avec docker commit, écrire un Dockerfile et comprendre le système de cache et de layers.",
+  "intro": {
+    "text": "intro.md",
+    "background": "intro.background.sh"
+  },
+  "details": {
+    "steps": [
+      {
+        "title": "Modifier un conteneur et inspecter les différences",
+        "text": "step1.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Créer une image avec docker commit",
+        "text": "step2.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Écrire un Dockerfile et construire une image",
+        "text": "step3.md",
+        "verify": "step3/verify.sh"
+      },
+      {
+        "title": "Cache, layers et optimisation",
+        "text": "step4.md",
+        "verify": "step4/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
