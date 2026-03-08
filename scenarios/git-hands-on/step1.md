@@ -10,6 +10,10 @@ Dans cette étape, vous allez créer un dépôt Git et configurer votre identit�
 
 `git init`{{exec}}
 
+Renommer la branche par défaut en `main` (standard moderne) :
+
+`git branch -m main`{{exec}}
+
 > Git crée un répertoire caché `.git/` qui stocke toute l'histoire du projet.
 
 Vérifiez qu'il existe bien :
