@@ -14,6 +14,11 @@
       "title": "Git — Fork, branches & workflow collaboratif",
       "description": "Cloner un dépôt, explorer les branches, maîtriser le staging, .gitignore, git lg et pousser sa branche",
       "path": "git-fork-branches"
+    },
+    {
+      "title": "Docker CLI — TP",
+      "description": "Installer Docker, manipuler images et conteneurs, maîtriser les commandes essentielles de la CLI.",
+      "path": "docker-cli-tp"
     }
   ]
 }

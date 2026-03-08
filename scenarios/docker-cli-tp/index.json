@@ -1,0 +1,43 @@
+{
+  "title": "Docker CLI — TP",
+  "description": "Installer Docker, manipuler images et conteneurs, maîtriser les commandes essentielles de la CLI.",
+  "intro": {
+    "text": "intro.md",
+    "background": "intro.background.sh"
+  },
+  "details": {
+    "steps": [
+      {
+        "title": "Installation et premier contact",
+        "text": "step1.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Images et premiers conteneurs",
+        "text": "step2.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Mode interactif et exec",
+        "text": "step3.md",
+        "verify": "step3/verify.sh"
+      },
+      {
+        "title": "Mode détaché et logs",
+        "text": "step4.md",
+        "verify": "step4/verify.sh"
+      },
+      {
+        "title": "Inspect, stop/start et nettoyage",
+        "text": "step5.md",
+        "verify": "step5/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
