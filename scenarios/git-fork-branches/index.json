@@ -1,0 +1,38 @@
+{
+  "title": "Git — Fork, branches & workflow collaboratif",
+  "description": "Cloner un dépôt, travailler avec des branches, maîtriser le staging et pousser son travail : le workflow Git complet en conditions réelles.",
+  "intro": {
+    "text": "intro.md",
+    "background": "intro.background.sh"
+  },
+  "details": {
+    "steps": [
+      {
+        "title": "Cloner et explorer les branches",
+        "text": "step1.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Créer une branche et commiter",
+        "text": "step2.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Staging avancé et .gitignore",
+        "text": "step3.md",
+        "verify": "step3/verify.sh"
+      },
+      {
+        "title": "Historique, alias et push",
+        "text": "step4.md",
+        "verify": "step4/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}

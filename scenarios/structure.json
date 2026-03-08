@@ -9,6 +9,11 @@
       "title": "Git Hands-On",
       "description": "Pratique Git dans le terminal Ubuntu : init, commits, branches et résolution de conflits",
       "path": "git-hands-on"
+    },
+    {
+      "title": "Git — Fork, branches & workflow collaboratif",
+      "description": "Cloner un dépôt, explorer les branches, maîtriser le staging, .gitignore, git lg et pousser sa branche",
+      "path": "git-fork-branches"
     }
   ]
 }
