@@ -57,3 +57,64 @@ echo -e "${CYAN}✓ Quiz terminé ! Cliquez sur 'Check' pour valider.${NC}"
 QUIZ_EOF
 
 chmod +x /root/quiz_step3.sh
+
+# ── Bilan final ────────────────────────────────────────────────────────────────
+cat > /root/quiz_results.sh << 'RESULTS_EOF'
+#!/bin/bash
+CYAN='\033[0;36m'; GREEN='\033[0;32m'; RED='\033[0;31m'; YELLOW='\033[1;33m'; NC='\033[0m'
+
+CORRECT_1=(2 3 3 4 4)
+CORRECT_2=(2 4 3 4 3)
+CORRECT_3=(4 4 3 3 3)
+
+score_step() {
+  local file="$1"
+  local -n correct="$2"
+  if [ ! -f "$file" ]; then echo "0"; return; fi
+  mapfile -t answers < "$file"
+  local s=0
+  for i in "${!correct[@]}"; do
+    [ "${answers[$i]}" = "${correct[$i]}" ] && ((s++))
+  done
+  echo "$s"
+}
+
+s1=$(score_step /tmp/quiz_step1.txt CORRECT_1)
+s2=$(score_step /tmp/quiz_step2.txt CORRECT_2)
+s3=$(score_step /tmp/quiz_step3.txt CORRECT_3)
+total=$((s1 + s2 + s3))
+
+bar() {
+  local score=$1 max=$2
+  local filled=$(( score * 10 / max ))
+  local b=""
+  for ((i=0; i<10; i++)); do
+    [ $i -lt $filled ] && b+="█" || b+="░"
+  done
+  echo "$b"
+}
+
+echo ""
+echo -e "${CYAN}╔══════════════════════════════════════════╗"
+echo -e "║     BILAN DU QCM DE POSITIONNEMENT      ║"
+echo -e "╚══════════════════════════════════════════╝${NC}"
+echo ""
+echo -e "  Étape 1 — Linux & Réseau        ${YELLOW}$s1/5${NC}  $(bar $s1 5)"
+echo -e "  Étape 2 — Virtualisation        ${YELLOW}$s2/5${NC}  $(bar $s2 5)"
+echo -e "  Étape 3 — Bases de Git          ${YELLOW}$s3/5${NC}  $(bar $s3 5)"
+echo    "  ──────────────────────────────────────────"
+
+if   [ "$total" -ge 12 ]; then
+  echo -e "  TOTAL                          ${GREEN}$total/15${NC}  ✓ Excellent"
+elif [ "$total" -ge 9 ]; then
+  echo -e "  TOTAL                          ${YELLOW}$total/15${NC}  ~ Satisfaisant"
+else
+  echo -e "  TOTAL                          ${RED}$total/15${NC}  ✗ À retravailler"
+fi
+
+echo ""
+echo -e "${CYAN}  → Montrez ce résultat à votre formateur.${NC}"
+echo ""
+RESULTS_EOF
+
+chmod +x /root/quiz_results.sh
