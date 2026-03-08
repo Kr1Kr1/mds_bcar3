@@ -44,6 +44,11 @@
       "title": "Docker Swarm — TP",
       "description": "Initialiser un cluster Swarm, déployer des services replicated et global, visualiser le cluster, simuler une maintenance et déployer une stack multi-services.",
       "path": "docker-swarm-tp"
+    },
+    {
+      "title": "Docker Registry — TP",
+      "description": "Déployer un registry privé, pousser et tirer des images, et explorer l'API REST du registry.",
+      "path": "docker-registry-tp"
     }
   ]
 }
