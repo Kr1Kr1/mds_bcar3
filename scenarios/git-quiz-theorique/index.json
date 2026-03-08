@@ -2,25 +2,27 @@
   "title": "Git Quiz Théorique",
   "description": "QCM de positionnement sur les prérequis (Linux, réseau, virtualisation, scripting) et les bases de Git.",
   "intro": {
-    "text": "intro.md",
-    "background": "setup.sh"
+    "text": "intro.md"
   },
   "details": {
     "steps": [
       {
         "title": "Linux & Réseau",
         "text": "step1.md",
-        "verify": "step1/verify.sh"
+        "verify": "step1/verify.sh",
+        "background": "step1/background.sh"
       },
       {
         "title": "Virtualisation & Scripting",
         "text": "step2.md",
-        "verify": "step2/verify.sh"
+        "verify": "step2/verify.sh",
+        "background": "step2/background.sh"
       },
       {
         "title": "Bases de Git",
         "text": "step3.md",
-        "verify": "step3/verify.sh"
+        "verify": "step3/verify.sh",
+        "background": "step3/background.sh"
       }
     ],
     "finish": {
