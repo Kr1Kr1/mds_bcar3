@@ -1,0 +1,43 @@
+{
+  "title": "Docker Réseau — TP",
+  "description": "Bridge par défaut, réseaux personnalisés, connexion multi-réseau, port mapping et load balancing avec HAProxy.",
+  "intro": {
+    "text": "intro.md",
+    "background": "intro.background.sh"
+  },
+  "details": {
+    "steps": [
+      {
+        "title": "Le réseau bridge par défaut",
+        "text": "step1.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Créer un bridge personnalisé",
+        "text": "step2.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Connexion à plusieurs réseaux",
+        "text": "step3.md",
+        "verify": "step3/verify.sh"
+      },
+      {
+        "title": "Port mapping avec nginx",
+        "text": "step4.md",
+        "verify": "step4/verify.sh"
+      },
+      {
+        "title": "Load balancing avec HAProxy",
+        "text": "step5.md",
+        "verify": "step5/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}

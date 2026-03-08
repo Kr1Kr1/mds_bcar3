@@ -24,6 +24,11 @@
       "title": "Docker Images — TP",
       "description": "Modifier un conteneur, docker commit, Dockerfile, cache de build et optimisation des layers.",
       "path": "docker-images-tp"
+    },
+    {
+      "title": "Docker Réseau — TP",
+      "description": "Bridge par défaut, réseaux personnalisés, connexion multi-réseau, port mapping et load balancing avec HAProxy.",
+      "path": "docker-reseau-tp"
     }
   ]
 }
