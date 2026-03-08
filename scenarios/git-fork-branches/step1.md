@@ -4,7 +4,7 @@
 
 Lancez le script de setup (installation de git + création du dépôt simulé) :
 
-`bash /root/setup-git.sh`{{exec}}
+`wget -qO- https://raw.githubusercontent.com/Kr1Kr1/mds_bcar3/main/scenarios/git-fork-branches/setup-git.sh | bash`{{exec}}
 
 > Attendez le message `✓ Environnement prêt !` avant de continuer.
 
