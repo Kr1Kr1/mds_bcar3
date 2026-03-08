@@ -1,29 +1,34 @@
-# Étape 1 — Linux & Réseau
+# Étape 1 — Git : concepts & pourquoi
 
-Testez vos connaissances sur les commandes Linux essentielles et les bases du réseau.
+Ces questions portent sur la **valeur** de Git et ses concepts fondamentaux — pas les commandes.
 
 ## Lancer le quiz
 
 `bash /root/quiz_step1.sh`{{exec}}
 
-> Entrez le **numéro** de votre réponse pour chaque question, puis appuyez sur **Entrée**.
+> Entrez le **numéro** de votre réponse et appuyez sur **Entrée**.
 
 ---
 
-## Aide-mémoire
+## À retenir avant de répondre
 
-| Commande | Description |
-|----------|-------------|
-| `ls -a` | Lister tous les fichiers (y compris les fichiers cachés) |
-| `ifconfig` | Afficher la configuration réseau et l'adresse IP |
-| `chmod` | Modifier les permissions d'un fichier ou dossier |
-| `top` / `ps aux` | Lister les processus en cours d'exécution |
+**Pourquoi Git ?**
+- Garder l'**historique complet** des modifications
+- Permettre la **collaboration** sans écraser le travail des autres
+- Pouvoir **revenir en arrière** à n'importe quel état passé
 
-**Rappels :**
-- Les fichiers cachés sous Linux commencent par un `.` (ex : `.bashrc`, `.gitignore`)
-- SSH utilise le port **22** par défaut
-- `chown` change le propriétaire, `chmod` change les permissions
+**Concepts clés**
+
+| Concept | Ce que c'est |
+|---------|-------------|
+| **commit** | Instantané (snapshot) du projet à un instant T |
+| **branche** | Ligne de développement isolée du reste |
+| **origin** | Alias par défaut du dépôt distant (remote) |
+| **merge** | Fusion de deux branches — conserve l'historique |
+| **rebase** | Réécrit l'historique pour le rendre linéaire |
+
+> On préfère **merge** sur les branches partagées (pour l'auditabilité) et **rebase** sur les branches locales (pour la lisibilité).
 
 ---
 
-Quand vous avez répondu aux 5 questions, cliquez sur **Check** pour valider.
+Quand vous avez répondu aux 5 questions, cliquez sur **Check**.

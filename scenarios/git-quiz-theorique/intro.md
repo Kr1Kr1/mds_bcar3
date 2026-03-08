@@ -1,17 +1,14 @@
-# Git Quiz Théorique
+# Git & Docker — Quiz Théorique
 
 Bienvenue dans ce QCM de positionnement !
 
-Ce quiz évalue vos connaissances sur :
+Ce quiz évalue votre **compréhension** de Git et Docker :
+- Pourquoi utilise-t-on ces outils ?
+- Quels problèmes résolvent-ils ?
+- Comment s'articulent-ils dans un workflow professionnel ?
 
-- Les commandes Linux essentielles
-- Les bases du réseau
-- La virtualisation et les conteneurs
-- Le scripting Bash
-- Les fondamentaux de Git
+> Les questions portent sur les **concepts et la valeur** des outils, pas sur la syntaxe des commandes — c'est le rôle du scénario pratique.
 
 ## Comment répondre
 
-Pour chaque étape, lancez le script de quiz et entrez le **numéro** correspondant à votre réponse, puis appuyez sur **Entrée**.
-
-> Les scripts de quiz sont en cours de préparation, merci de patienter quelques secondes avant de démarrer l'étape 1...
+Pour chaque étape, lancez le script de quiz et entrez le **numéro** de votre réponse.

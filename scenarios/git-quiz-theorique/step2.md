@@ -1,31 +1,36 @@
-# Étape 2 — Virtualisation & Scripting
+# Étape 2 — Docker : concepts & pourquoi
 
-Testez vos connaissances sur la virtualisation et le scripting Bash.
+Ces questions portent sur la **valeur** de Docker et ses concepts fondamentaux — pas les commandes.
 
 ## Lancer le quiz
 
 `bash /root/quiz_step2.sh`{{exec}}
 
-> Entrez le **numéro** de votre réponse pour chaque question, puis appuyez sur **Entrée**.
+> Entrez le **numéro** de votre réponse et appuyez sur **Entrée**.
 
 ---
 
-## Aide-mémoire
+## À retenir avant de répondre
 
-| Concept | Détail |
-|---------|--------|
-| **Hyperviseur type 1** | S'exécute **directement sur le matériel** (ex : VMware ESXi, Hyper-V) |
-| **Hyperviseur type 2** | S'exécute **sur un OS hôte** (ex : VirtualBox, VMware Workstation) |
-| **Docker** | Utilise les **namespaces** et **cgroups** du noyau Linux |
-| `bash script.sh` | Exécuter un script Bash |
-| `$?` | Code de retour de la dernière commande (0 = succès) |
-| `chmod +x script.sh` | Rendre un script Bash exécutable |
+**Pourquoi Docker ?**
+- Résoudre le syndrome **"ça marche sur ma machine"**
+- Garantir un **environnement identique** en dev, test et prod
+- Démarrer des services en **secondes** (vs minutes pour une VM)
 
-**Rappels :**
-- Un hyperviseur **type 1** (bare-metal) n'a pas besoin d'OS hôte
-- Docker isole les processus via les namespaces Linux, il ne virtualise pas le matériel
-- `$0` = nom du script, `$1` = premier argument, `$$` = PID du processus courant
+**Concepts clés**
+
+| Concept | Ce que c'est |
+|---------|-------------|
+| **Image** | Modèle **immuable** (lecture seule) pour créer des conteneurs |
+| **Conteneur** | Instance **en cours d'exécution** d'une image |
+| **Volume** | Stockage **persistant** indépendant du cycle de vie du conteneur |
+| **Docker Compose** | Orchestration de **plusieurs conteneurs** via un fichier YAML |
+| **Registry** | Dépôt centralisé pour **stocker et distribuer** des images |
+
+**VM vs Conteneur**
+- VM = OS complet + émulation matérielle → lourd, lent à démarrer
+- Conteneur = partage le **noyau Linux de l'hôte** → léger, rapide
 
 ---
 
-Quand vous avez répondu aux 5 questions, cliquez sur **Check** pour valider.
+Quand vous avez répondu aux 5 questions, cliquez sur **Check**.

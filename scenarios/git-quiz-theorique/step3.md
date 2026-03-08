@@ -1,33 +1,35 @@
-# Étape 3 — Bases de Git
+# Étape 3 — Git + Docker : vision d'ensemble
 
-Testez vos connaissances sur les commandes fondamentales de Git.
+Ces questions portent sur l'**articulation** des deux outils dans un contexte professionnel.
 
 ## Lancer le quiz
 
 `bash /root/quiz_step3.sh`{{exec}}
 
-> Entrez le **numéro** de votre réponse pour chaque question, puis appuyez sur **Entrée**.
+> Entrez le **numéro** de votre réponse et appuyez sur **Entrée**.
 
 ---
 
-## Aide-mémoire
+## À retenir avant de répondre
 
-| Commande | Description |
-|----------|-------------|
-| `git init` | Initialiser un nouveau dépôt Git local |
-| `git add <fichier>` | Ajouter un fichier à la zone de staging |
-| `git add .` | Ajouter tous les fichiers modifiés au staging |
-| `git commit -m "msg"` | Créer un commit avec un message |
-| `git branch <nom>` | Créer une nouvelle branche |
-| `git checkout <branche>` | Basculer vers une branche |
-| `git pull` | Récupérer **et intégrer** les modifications distantes |
-| `git fetch` | Récupérer les modifications distantes **sans les intégrer** |
+**Git + Docker : le duo SysOps**
 
-**Rappels :**
-- `git stage` n'existe pas — c'est `git add`
-- `git pull` = `git fetch` + `git merge`
-- `git init` crée le répertoire caché `.git`
+```
+Code source  →  git commit  →  git push  →  docker build  →  déploiement
+```
+
+- **Git** versionne le code ET l'infrastructure (Dockerfile, docker-compose.yml)
+- **Docker** garantit que ce code s'exécute de façon identique partout
+- Ensemble, ils forment la base de l'**Infrastructure as Code (IaC)**
+
+**Infrastructure as Code**
+> Décrire et gérer l'infrastructure dans des **fichiers texte versionnés**
+> → traçabilité, reproductibilité, collaboration
+
+**Registry = le "GitHub des images"**
+- Docker Hub, GitLab Registry, Harbor...
+- Stocke et distribue les images Docker versionnées
 
 ---
 
-Quand vous avez répondu aux 5 questions, cliquez sur **Check** pour valider.
+Quand vous avez répondu aux 5 questions, cliquez sur **Check**.

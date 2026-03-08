@@ -1,25 +1,25 @@
 {
-  "title": "Git Quiz Théorique",
-  "description": "QCM de positionnement sur les prérequis (Linux, réseau, virtualisation, scripting) et les bases de Git.",
+  "title": "Git & Docker — Quiz Théorique",
+  "description": "QCM de positionnement : pourquoi et comment utiliser Git et Docker dans un contexte professionnel.",
   "intro": {
     "text": "intro.md"
   },
   "details": {
     "steps": [
       {
-        "title": "Linux & Réseau",
+        "title": "Git — concepts & pourquoi",
         "text": "step1.md",
         "verify": "step1/verify.sh",
         "background": "step1/background.sh"
       },
       {
-        "title": "Virtualisation & Scripting",
+        "title": "Docker — concepts & pourquoi",
         "text": "step2.md",
         "verify": "step2/verify.sh",
         "background": "step2/background.sh"
       },
       {
-        "title": "Bases de Git",
+        "title": "Git + Docker — vision d'ensemble",
         "text": "step3.md",
         "verify": "step3/verify.sh",
         "background": "step3/background.sh"
