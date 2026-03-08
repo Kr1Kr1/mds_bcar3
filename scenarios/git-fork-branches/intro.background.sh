@@ -4,7 +4,8 @@
 
 set -e
 
-apt-get install -y git 2>/dev/null | tail -1
+apt-get update -qq 2>/dev/null || true
+apt-get install -y git 2>/dev/null || true
 
 git config --global user.email "etudiant@mds.fr"
 git config --global user.name "Étudiant MDS"
