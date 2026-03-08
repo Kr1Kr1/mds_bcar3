@@ -49,6 +49,16 @@
       "title": "Docker Registry — TP",
       "description": "Déployer un registry privé, pousser et tirer des images, et explorer l'API REST du registry.",
       "path": "docker-registry-tp"
+    },
+    {
+      "title": "Docker API — TP",
+      "description": "Exposer l'API REST de Docker, explorer ses endpoints avec curl, créer et piloter des conteneurs sans la CLI.",
+      "path": "docker-api-tp"
+    },
+    {
+      "title": "Docker Avancé — TP",
+      "description": "Quatre exercices avancés : image minimale multi-stage, builds multi-arch avec Buildx, optimisation du cache et sécurité des Dockerfiles.",
+      "path": "docker-advanced-tp"
     }
   ]
 }

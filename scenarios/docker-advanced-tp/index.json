@@ -1,0 +1,22 @@
+{
+  "title": "Docker Avancé — TP",
+  "description": "Quatre exercices avancés : image minimale, builds multi-architectures, optimisation du cache et sécurité des Dockerfiles.",
+  "difficulty": "Advanced",
+  "time": "60",
+  "backend": {
+    "imageid": "ubuntu"
+  },
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "intro.background.sh"
+    },
+    "steps": [
+      { "title": "La plus petite image possible", "text": "step1.md", "verify": "step1/verify.sh" },
+      { "title": "Builds multi-architectures avec Buildx", "text": "step2.md", "verify": "step2/verify.sh" },
+      { "title": "Optimisation du cache Docker", "text": "step3.md", "verify": "step3/verify.sh" },
+      { "title": "Analyse et correction d'un Dockerfile malicieux", "text": "step4.md", "verify": "step4/verify.sh" }
+    ],
+    "finish": { "text": "finish.md" }
+  }
+}

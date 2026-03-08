@@ -1,0 +1,22 @@
+{
+  "title": "Docker API — TP",
+  "description": "Exposer l'API Docker, explorer ses endpoints REST, créer et piloter des conteneurs via curl.",
+  "difficulty": "Intermediate",
+  "time": "30",
+  "backend": {
+    "imageid": "ubuntu"
+  },
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "intro.background.sh"
+    },
+    "steps": [
+      { "title": "Exposer l'API Docker via TCP", "text": "step1.md", "verify": "step1/verify.sh" },
+      { "title": "Explorer l'API : version, images et pull", "text": "step2.md", "verify": "step2/verify.sh" },
+      { "title": "Créer et piloter un conteneur via l'API", "text": "step3.md", "verify": "step3/verify.sh" },
+      { "title": "Signaux, suppression et bonus jq", "text": "step4.md", "verify": "step4/verify.sh" }
+    ],
+    "finish": { "text": "finish.md" }
+  }
+}
