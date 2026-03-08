@@ -94,7 +94,7 @@ chmod +x /root/quiz_step3.sh
 # ── Bilan final + envoi Google Sheets ─────────────────────────────────────────
 cat > /root/quiz_results.sh << 'RESULTS_EOF'
 #!/bin/bash
-WEBHOOK="https://script.google.com/macros/s/AKfycby4eksr3TCtLJp71SSK9bG11yfx2aHfvydlJaS3RcKQkq_QKu5nI52FQgjkpNS6VKwb/exec"
+WEBHOOK="https://script.google.com/macros/s/AKfycbz6m907t86qgWKbQ9kYG8VJ_eSMUatBXAOM_kkgG-016i7gFUsmNUYlFn1WrDL1SUwS/exec"
 CYAN='\033[0;36m'; GREEN='\033[0;32m'; RED='\033[0;31m'; YELLOW='\033[1;33m'; NC='\033[0m'
 
 # Lecture du pseudo
