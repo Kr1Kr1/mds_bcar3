@@ -58,9 +58,10 @@ QUIZ_EOF
 
 chmod +x /root/quiz_step3.sh
 
-# ── Bilan final ────────────────────────────────────────────────────────────────
+# ── Bilan final + envoi Google Sheets ─────────────────────────────────────────
 cat > /root/quiz_results.sh << 'RESULTS_EOF'
 #!/bin/bash
+WEBHOOK="https://script.google.com/macros/s/AKfycby4eksr3TCtLJp71SSK9bG11yfx2aHfvydlJaS3RcKQkq_QKu5nI52FQgjkpNS6VKwb/exec"
 CYAN='\033[0;36m'; GREEN='\033[0;32m'; RED='\033[0;31m'; YELLOW='\033[1;33m'; NC='\033[0m'
 
 CORRECT_1=(2 3 3 4 4)
@@ -113,7 +114,19 @@ else
 fi
 
 echo ""
-echo -e "${CYAN}  → Montrez ce résultat à votre formateur.${NC}"
+echo -ne "  Envoi des résultats au formateur... "
+HOSTNAME=$(hostname)
+HTTP=$(curl -s -o /tmp/webhook_resp.txt -w "%{http_code}" -L \
+  -X POST "$WEBHOOK" \
+  -H "Content-Type: application/json" \
+  -d "{\"hostname\":\"$HOSTNAME\",\"s1\":$s1,\"s2\":$s2,\"s3\":$s3,\"total\":$total}" \
+  2>/dev/null)
+
+if [ "$HTTP" = "200" ]; then
+  echo -e "${GREEN}✓ Envoyé !${NC}"
+else
+  echo -e "${RED}✗ Échec (code $HTTP) — montrez votre écran à votre formateur.${NC}"
+fi
 echo ""
 RESULTS_EOF
 
