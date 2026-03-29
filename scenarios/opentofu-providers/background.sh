@@ -1,7 +1,7 @@
 #!/bin/bash
 echo starting...
 
-apt-get install -y curl
+apt-get install -y curl wget
 
 # Install OpenTofu
 curl --proto '=https' --tlsv1.2 -fsSL https://get.opentofu.org/install-opentofu.sh -o install-opentofu.sh
