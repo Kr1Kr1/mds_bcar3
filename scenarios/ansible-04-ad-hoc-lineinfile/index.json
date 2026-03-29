@@ -1,0 +1,29 @@
+{
+    "title": "Ansible Intro",
+    "description": "Ad Hoc Commands - copy and lineinfile",
+    "details": {
+      "intro": {
+        "text": "intro.md",
+        "background": "background.sh"
+      },
+      "steps": [
+        {
+          "title": "Ad Hoc to copy and edit",
+          "text": "step1/desc.md",
+          "verify": "step1/verify.sh"
+        }
+      ],
+	    "assets": {
+	       "host01": [
+		        {"file": "hosts", "target": "~/"},
+            {"file": "configfile.cfg", "target": "~/"}
+         ]
+        },
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "backend": {
+      "imageid": "kubernetes-kubeadm-2nodes"
+    }
+  }

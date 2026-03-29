@@ -89,6 +89,51 @@
       "title": "OpenTofu — 6. Write a Module",
       "description": "Create your first module: simplify tenant management on Kubernetes.",
       "path": "opentofu-write-a-module"
+    },
+    {
+      "title": "Ansible — 1. Install Ansible",
+      "description": "Install Ansible and verify functionality.",
+      "path": "ansible-01-install"
+    },
+    {
+      "title": "Ansible — 2. Host File",
+      "description": "Setup Ansible host file and test connectivity.",
+      "path": "ansible-02-host-file"
+    },
+    {
+      "title": "Ansible — 3. Ad Hoc Commands",
+      "description": "Ad Hoc Commands - shell and setup.",
+      "path": "ansible-03-ad-hoc"
+    },
+    {
+      "title": "Ansible — 4. Ad Hoc lineinfile",
+      "description": "Ad Hoc Commands - copy and lineinfile.",
+      "path": "ansible-04-ad-hoc-lineinfile"
+    },
+    {
+      "title": "Ansible — 5. Playbook Staging",
+      "description": "Playbook to stage a .tar.gz file.",
+      "path": "ansible-05-playbook-staging"
+    },
+    {
+      "title": "Ansible — 6. Playbook Deployer",
+      "description": "Playbook to deploy an application.",
+      "path": "ansible-06-playbook-deployer"
+    },
+    {
+      "title": "Ansible — 7. Jinja2 Templates",
+      "description": "Playbook to deploy a Jinja2 template.",
+      "path": "ansible-07-jinja-templates"
+    },
+    {
+      "title": "Ansible — 8. Jinja2 Reporting",
+      "description": "Playbook to deploy a Jinja2 report.",
+      "path": "ansible-08-jinja-reporting"
+    },
+    {
+      "title": "Ansible — 9. APIs & Debug Variables",
+      "description": "Playbook to call an API and debug variables.",
+      "path": "ansible-09-apis-debug"
     }
   ]
 }

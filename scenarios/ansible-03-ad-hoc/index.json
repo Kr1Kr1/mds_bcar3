@@ -1,0 +1,28 @@
+{
+    "title": "Ansible Intro",
+    "description": "Ad Hoc Commands - shell and setup",
+    "details": {
+      "intro": {
+        "text": "intro.md",
+        "background": "background.sh"
+      },
+      "steps": [
+        {
+          "title": "Ad Hoc to gather data",
+          "text": "step1/desc.md",
+          "verify": "step1/verify.sh"
+        }
+      ],
+	    "assets": {
+	       "host01": [
+		        {"file": "hosts", "target": "~/"}
+         ]
+        },
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "backend": {
+      "imageid": "kubernetes-kubeadm-2nodes"
+    }
+  }

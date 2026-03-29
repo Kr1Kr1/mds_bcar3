@@ -1,0 +1,29 @@
+{
+    "title": "Ansible Playbooks",
+    "description": "Playbook to call an API and 'debug' variables",
+    "details": {
+      "intro": {
+        "text": "intro.md",
+        "background": "background.sh"
+      },
+      "steps": [
+        {
+          "title": "Playbook execution to see API call with URI module",
+          "text": "step1/desc.md",
+          "verify": "step1/verify.sh"
+        }
+      ],
+	    "assets": {
+	       "host01": [
+		        {"file": "hosts", "target": "~/"},
+            {"file": "api.yaml", "target": "~/"}
+         ]
+        },
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "backend": {
+      "imageid": "ubuntu"
+    }
+  }
