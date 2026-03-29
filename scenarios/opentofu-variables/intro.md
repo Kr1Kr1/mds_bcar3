@@ -9,9 +9,3 @@ important aspect when building generic and reusable configurations.
 
 No prerequisites are required for this scenario. This scenario is using Kubernetes as the target infrastructure. Basic
 Knowledge of Kubernetes is beneficial but not required.
-
-## Problems
-
-If you encounter any problems, typos or have feedback, please open an issue on
-this [GitHub Repository](https://github.com/peak-scale/killercoda). All our scenarios are open source and we are happy
-to receive your feedback.

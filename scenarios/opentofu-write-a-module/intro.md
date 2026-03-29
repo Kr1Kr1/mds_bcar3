@@ -9,9 +9,3 @@ will compose of different Kubernetes resources.
 
 You should already have a solid understanding of OpenTofu and Kubernetes. If you are not familiar with these
 technologies, we recommend you to look at the previous scenarios.
-
-## Problems
-
-If you encounter any problems, typos or have feedback, please open an issue on
-this [GitHub Repository](https://github.com/peak-scale/killercoda). All our scenarios are open source and we are happy
-to receive your feedback.
