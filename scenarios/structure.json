@@ -59,6 +59,36 @@
       "title": "Docker Avancé — TP",
       "description": "Quatre exercices avancés : image minimale multi-stage, builds multi-arch avec Buildx, optimisation du cache et sécurité des Dockerfiles.",
       "path": "docker-advanced-tp"
+    },
+    {
+      "title": "OpenTofu — 1. Get Started",
+      "description": "Start with your first OpenTofu interactions.",
+      "path": "opentofu-getting-started"
+    },
+    {
+      "title": "OpenTofu — 2. Providers",
+      "description": "Work with upstream providers and gather information about the resources they offer.",
+      "path": "opentofu-providers"
+    },
+    {
+      "title": "OpenTofu — 3. Resources",
+      "description": "Understand resources and handle their lifecycle.",
+      "path": "opentofu-resources"
+    },
+    {
+      "title": "OpenTofu — 4. Data Sources",
+      "description": "Understand data sources and handle their lifecycle.",
+      "path": "opentofu-data-sources"
+    },
+    {
+      "title": "OpenTofu — 5. Variables",
+      "description": "Don't repeat yourself. Use variables to store values that you use multiple times in your configuration.",
+      "path": "opentofu-variables"
+    },
+    {
+      "title": "OpenTofu — 6. Write a Module",
+      "description": "Create your first module: simplify tenant management on Kubernetes.",
+      "path": "opentofu-write-a-module"
     }
   ]
 }
