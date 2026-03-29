@@ -1,0 +1,35 @@
+{
+  "title": "IaC — Quiz Théorique",
+  "description": "QCM de positionnement sur l'Infrastructure as Code : Terraform, OpenTofu, Ansible, Pulumi et SaltStack.",
+  "intro": {
+    "text": "intro.md"
+  },
+  "details": {
+    "steps": [
+      {
+        "title": "Terraform & OpenTofu — concepts & workflow",
+        "text": "step1.md",
+        "verify": "step1/verify.sh",
+        "background": "step1/background.sh"
+      },
+      {
+        "title": "Ansible — automatisation de configuration",
+        "text": "step2.md",
+        "verify": "step2/verify.sh",
+        "background": "step2/background.sh"
+      },
+      {
+        "title": "Pulumi, SaltStack & vision d'ensemble IaC",
+        "text": "step3.md",
+        "verify": "step3/verify.sh",
+        "background": "step3/background.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}

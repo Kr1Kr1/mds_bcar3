@@ -61,6 +61,11 @@
       "path": "docker-advanced-tp"
     },
     {
+      "title": "IaC — Quiz Théorique",
+      "description": "QCM de positionnement sur l'Infrastructure as Code : Terraform, OpenTofu, Ansible, Pulumi et SaltStack.",
+      "path": "iac-quiz-theorique"
+    },
+    {
       "title": "OpenTofu — 1. Get Started",
       "description": "Start with your first OpenTofu interactions.",
       "path": "opentofu-getting-started"
