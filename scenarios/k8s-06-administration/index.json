@@ -1,0 +1,33 @@
+{
+  "title": "Kubernetes — Administration du cluster",
+  "description": "Inspecter le control plane, sauvegarder etcd et assurer la maintenance des nœuds.",
+  "intro": {
+    "text": "intro.md"
+  },
+  "details": {
+    "steps": [
+      {
+        "title": "Inspecter le control plane",
+        "text": "step1.md",
+        "verify": "step1/verify.sh",
+        "background": "step1/background.sh"
+      },
+      {
+        "title": "Backup etcd",
+        "text": "step2.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Maintenance d'un nœud",
+        "text": "step3.md",
+        "verify": "step3/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes"
+  }
+}

@@ -2,80 +2,40 @@
 
 ## 1. Créer des namespaces d'environnement
 
-`kubectl create namespace staging`{{exec}}
+*Créez un namespace nommé `staging`.*
 
-`kubectl create namespace production`{{exec}}
+*Créez un namespace nommé `production`.*
 
-`kubectl get namespaces`{{exec}}
+*Listez tous les namespaces pour confirmer leur création.*
 
 ## 2. Déployer dans des namespaces séparés
 
-```bash
-cat > /root/deploy-staging.yaml << 'EOF'
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: webapp
-  namespace: staging
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: webapp
-  template:
-    metadata:
-      labels:
-        app: webapp
-    spec:
-      containers:
-        - name: nginx
-          image: nginx:1.25
-          resources:
-            requests:
-              cpu: "50m"
-              memory: "32Mi"
-EOF
-```{{exec}}
+*Créez le fichier `/root/deploy-staging.yaml` définissant un Deployment nommé `webapp` dans le namespace `staging` avec 1 replica, l'image `nginx:1.25`, le label `app: webapp`, requests CPU 50m et mémoire 32Mi.*
 
-`kubectl apply -f /root/deploy-staging.yaml`{{exec}}
+*Appliquez le manifest pour créer le Deployment dans le namespace `staging`.*
 
-`kubectl get pods -n staging`{{exec}}
+*Listez les pods dans le namespace `staging`.*
 
-`kubectl get pods -n production`{{exec}}
+*Listez les pods dans le namespace `production` (la liste doit être vide).*
 
 > Les namespaces sont isolés — on ne voit pas les pods entre eux avec `kubectl get pods`
 
 ## 3. Appliquer un ResourceQuota
 
-```bash
-cat > /root/quota-staging.yaml << 'EOF'
-apiVersion: v1
-kind: ResourceQuota
-metadata:
-  name: quota-staging
-  namespace: staging
-spec:
-  hard:
-    pods: "5"
-    requests.cpu: "500m"
-    requests.memory: "512Mi"
-    limits.cpu: "1"
-    limits.memory: "1Gi"
-EOF
-```{{exec}}
+*Créez le fichier `/root/quota-staging.yaml` définissant un ResourceQuota nommé `quota-staging` dans le namespace `staging` avec les limites suivantes : 5 pods maximum, requests.cpu 500m, requests.memory 512Mi, limits.cpu 1, limits.memory 1Gi.*
 
-`kubectl apply -f /root/quota-staging.yaml`{{exec}}
+*Appliquez le manifest pour créer le ResourceQuota.*
 
-`kubectl describe resourcequota quota-staging -n staging`{{exec}}
+*Décrivez le ResourceQuota `quota-staging` dans le namespace `staging` pour voir l'utilisation actuelle.*
 
 ## 4. Tester la résolution DNS entre namespaces
 
-`kubectl run dns-test --image=busybox --rm -it -n staging --restart=Never -- nslookup kubernetes.default`{{exec}}
+*Lancez un pod temporaire `busybox` dans le namespace `staging` pour résoudre le nom DNS `kubernetes.default` et vérifier la résolution inter-namespaces.*
 
 > Le format DNS complet : `<service>.<namespace>.svc.cluster.local`
 
 ## 5. Voir toutes les ressources d'un namespace
 
-`kubectl get all -n staging`{{exec}}
+*Affichez toutes les ressources du namespace `staging`.*
 
 > Cliquez sur **Check** quand les namespaces staging et production existent et que le quota est appliqué.

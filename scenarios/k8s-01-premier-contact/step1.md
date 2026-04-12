@@ -4,34 +4,34 @@ Prenez connaissance du cluster avant de déployer quoi que ce soit.
 
 ## 1. Vérifier l'état du cluster
 
-`kubectl cluster-info`{{exec}}
+*Affichez les informations générales du cluster (adresses du control plane et de CoreDNS).*
 
-`kubectl get nodes`{{exec}}
+*Listez les nœuds du cluster.*
 
-`kubectl get nodes -o wide`{{exec}}
+*Listez les nœuds avec leurs informations détaillées (IP interne/externe, OS, version du kernel, version de kubelet).*
 
 > Vous devez voir 2 nœuds : `controlplane` (Ready) et `node01` (Ready)
 
 ## 2. Explorer les namespaces
 
-`kubectl get namespaces`{{exec}}
+*Listez tous les namespaces existants dans le cluster.*
 
-`kubectl get pods -n kube-system`{{exec}}
+*Listez les pods du namespace `kube-system`.*
 
 > Repérez les composants : `coredns`, `etcd`, `kube-apiserver`, `kube-scheduler`, `kube-controller-manager`, `kube-proxy`
 
 ## 3. Voir toutes les ressources du cluster
 
-`kubectl get all -A`{{exec}}
+*Affichez toutes les ressources de tous les namespaces.*
 
 ## 4. Explorer les types de ressources disponibles
 
-`kubectl api-resources | head -20`{{exec}}
+*Listez les types de ressources disponibles dans l'API Kubernetes et limitez l'affichage aux 20 premiers résultats.*
 
 ## Validation
 
 Vérifiez que les 2 nœuds sont en état `Ready` :
 
-`kubectl get nodes`{{exec}}
+*Listez les nœuds du cluster et vérifiez que les 2 sont en état Ready.*
 
 > Cliquez sur **Check** quand les 2 nœuds sont Ready.

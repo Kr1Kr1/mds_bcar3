@@ -4,45 +4,46 @@ Apprenez à diagnostiquer l'état d'un pod.
 
 ## 1. Décrire le pod en détail
 
-`kubectl describe pod nginx-pod`{{exec}}
+*Affichez la description complète du pod `nginx-pod`.*
 
 > Repérez : les **Events**, les **Conditions**, les **Limits/Requests**, l'IP du pod
 
 ## 2. Voir les logs
 
-`kubectl logs nginx-pod`{{exec}}
+*Affichez les logs du pod `nginx-pod`.*
 
-`kubectl logs nginx-pod --tail=5`{{exec}}
+*Affichez les 5 dernières lignes de logs du pod.*
 
 ## 3. Exécuter une commande dans le conteneur
 
-`kubectl exec nginx-pod -- nginx -v`{{exec}}
+*Exécutez la commande `nginx -v` dans le conteneur du pod pour afficher la version.*
 
-`kubectl exec -it nginx-pod -- sh`{{exec}}
+*Ouvrez un shell interactif dans le conteneur du pod.*
 
 Dans le conteneur, explorez :
-```sh
-cat /etc/nginx/nginx.conf
-curl localhost
-exit
-```
+
+*Affichez le contenu du fichier de configuration nginx `/etc/nginx/nginx.conf`.*
+
+*Effectuez une requête HTTP sur `localhost` depuis l'intérieur du conteneur.*
+
+*Quittez le shell interactif.*
 
 ## 4. Port-forward pour tester depuis l'hôte
 
-`kubectl port-forward pod/nginx-pod 8080:80 &`{{exec}}
+*Créez un port-forward entre le port local 8080 et le port 80 du pod `nginx-pod`, en arrière-plan.*
 
-`curl localhost:8080`{{exec}}
+*Effectuez une requête HTTP sur `localhost:8080` pour vérifier que le pod répond.*
 
-`kill %1`{{exec}}
+*Arrêtez le processus de port-forward.*
 
 ## 5. Voir le YAML complet
 
-`kubectl get pod nginx-pod -o yaml | head -50`{{exec}}
+*Affichez le manifeste YAML complet du pod `nginx-pod` tel qu'il est stocké dans etcd (limitez à 50 lignes).*
 
 ## 6. Nettoyer
 
-`kubectl delete pod nginx-pod`{{exec}}
+*Supprimez le pod `nginx-pod`.*
 
-`kubectl get pods`{{exec}}
+*Vérifiez que la liste des pods est vide.*
 
 > Cliquez sur **Check** quand le pod est supprimé.

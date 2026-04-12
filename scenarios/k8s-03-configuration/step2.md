@@ -2,68 +2,34 @@
 
 ## 1. Créer un Secret
 
-```bash
-cat > /root/db-secret.yaml << 'EOF'
-apiVersion: v1
-kind: Secret
-metadata:
-  name: db-secret
-type: Opaque
-stringData:
-  DB_USER: "admin"
-  DB_PASSWORD: "mon-super-mdp-secret"
-  DB_HOST: "postgres.prod.svc.cluster.local"
-EOF
-```{{exec}}
+*Créez le fichier `/root/db-secret.yaml` définissant un Secret de type `Opaque` nommé `db-secret` avec les champs `DB_USER: "admin"`, `DB_PASSWORD: "mon-super-mdp-secret"` et `DB_HOST: "postgres.prod.svc.cluster.local"` (en utilisant `stringData` pour écrire les valeurs en clair).*
 
-`kubectl apply -f /root/db-secret.yaml`{{exec}}
+*Appliquez le manifest pour créer le Secret.*
 
-`kubectl get secret db-secret`{{exec}}
+*Listez le Secret `db-secret` (remarquez que les valeurs ne sont pas affichées).*
 
 ## 2. Voir le Secret (encodé base64)
 
-`kubectl get secret db-secret -o yaml`{{exec}}
+*Affichez le Secret `db-secret` au format YAML pour observer l'encodage base64 des valeurs.*
 
 > Les valeurs sont encodées en base64, pas chiffrées
 
-`kubectl get secret db-secret -o jsonpath='{.data.DB_PASSWORD}' | base64 -d`{{exec}}
+*Extrayez la valeur de `DB_PASSWORD` en base64 et décodez-la pour lire la valeur en clair.*
 
 ## 3. Utiliser le Secret dans un Pod
 
-```bash
-cat > /root/pod-secret.yaml << 'EOF'
-apiVersion: v1
-kind: Pod
-metadata:
-  name: app-avec-secret
-spec:
-  containers:
-    - name: app
-      image: nginx:1.25
-      env:
-        - name: DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: db-secret
-              key: DB_PASSWORD
-        - name: DB_USER
-          valueFrom:
-            secretKeyRef:
-              name: db-secret
-              key: DB_USER
-EOF
-```{{exec}}
+*Créez le fichier `/root/pod-secret.yaml` définissant un Pod nommé `app-avec-secret` avec l'image `nginx:1.25`, injectant les variables d'environnement `DB_PASSWORD` et `DB_USER` depuis les clés correspondantes du Secret `db-secret`.*
 
-`kubectl apply -f /root/pod-secret.yaml`{{exec}}
+*Appliquez le manifest pour créer le Pod.*
 
-`kubectl exec app-avec-secret -- env | grep DB_`{{exec}}
+*Exécutez une commande dans le Pod `app-avec-secret` pour afficher les variables d'environnement commençant par `DB_`.*
 
 > Le secret est disponible comme variable d'environnement, sans jamais être visible dans le YAML du pod
 
 ## 4. Créer un Secret depuis la ligne de commande
 
-`kubectl create secret generic api-keys --from-literal=API_KEY=abc123xyz --from-literal=API_SECRET=supersecret`{{exec}}
+*Créez un Secret générique nommé `api-keys` avec les littéraux `API_KEY=abc123xyz` et `API_SECRET=supersecret`, directement en ligne de commande sans manifest YAML.*
 
-`kubectl get secrets`{{exec}}
+*Listez tous les Secrets pour vérifier la création.*
 
 > Cliquez sur **Check** quand `app-avec-secret` est Running.

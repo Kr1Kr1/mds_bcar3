@@ -1,0 +1,35 @@
+{
+  "title": "Kubernetes — Bilan fondamentaux",
+  "description": "Quiz interactif couvrant les fondamentaux Kubernetes : Pods, Deployments, ReplicaSets, Services, ConfigMaps, Secrets, Namespaces et CoreDNS. Basé sur le blog de Stéphane Robert.",
+  "intro": {
+    "text": "intro.md"
+  },
+  "details": {
+    "steps": [
+      {
+        "title": "Pods, ReplicaSets, Deployments",
+        "text": "step1.md",
+        "verify": "step1/verify.sh",
+        "background": "step1/background.sh"
+      },
+      {
+        "title": "Services, ConfigMaps, Secrets",
+        "text": "step2.md",
+        "verify": "step2/verify.sh",
+        "background": "step2/background.sh"
+      },
+      {
+        "title": "Namespaces, CoreDNS, vision d'ensemble",
+        "text": "step3.md",
+        "verify": "step3/verify.sh",
+        "background": "step3/background.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}

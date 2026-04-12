@@ -4,47 +4,24 @@ Créez votre premier Pod depuis un manifest YAML.
 
 ## 1. Créer le manifest
 
-```bash
-cat > /root/premier-pod.yaml << 'EOF'
-apiVersion: v1
-kind: Pod
-metadata:
-  name: nginx-pod
-  labels:
-    app: nginx
-    env: lab
-spec:
-  containers:
-    - name: nginx
-      image: nginx:1.25
-      ports:
-        - containerPort: 80
-      resources:
-        requests:
-          memory: "64Mi"
-          cpu: "100m"
-        limits:
-          memory: "128Mi"
-          cpu: "200m"
-EOF
-```{{exec}}
+*Créez le fichier `/root/premier-pod.yaml` définissant un Pod nommé `nginx-pod` avec les caractéristiques suivantes : image `nginx:1.25`, labels `app: nginx` et `env: lab`, port 80, requests mémoire 64Mi et CPU 100m, limits mémoire 128Mi et CPU 200m.*
 
 ## 2. Appliquer le manifest
 
-`kubectl apply -f /root/premier-pod.yaml`{{exec}}
+*Appliquez le manifest pour créer le Pod dans le cluster.*
 
 ## 3. Vérifier le statut
 
-`kubectl get pods`{{exec}}
+*Listez les pods du namespace courant.*
 
-`kubectl get pod nginx-pod -o wide`{{exec}}
+*Affichez les détails du pod `nginx-pod` avec ses informations étendues (nœud, IP, etc.).*
 
 > Attendez que le pod soit en état `Running` (téléchargement de l'image peut prendre quelques secondes)
 
 ## 4. Inspecter les labels
 
-`kubectl get pods --show-labels`{{exec}}
+*Listez les pods en affichant leurs labels.*
 
-`kubectl get pods -l app=nginx`{{exec}}
+*Filtrez les pods portant le label `app=nginx`.*
 
 > Cliquez sur **Check** quand `nginx-pod` est en état `Running`.

@@ -1,0 +1,33 @@
+{
+  "title": "Kubernetes — Réseau et Stockage",
+  "description": "Appliquer des NetworkPolicies, créer un Ingress et gérer le stockage persistant avec PVC.",
+  "intro": {
+    "text": "intro.md"
+  },
+  "details": {
+    "steps": [
+      {
+        "title": "NetworkPolicies — isolation réseau",
+        "text": "step1.md",
+        "verify": "step1/verify.sh",
+        "background": "step1/background.sh"
+      },
+      {
+        "title": "Ingress — exposition HTTP",
+        "text": "step2.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Stockage persistant — PVC",
+        "text": "step3.md",
+        "verify": "step3/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes"
+  }
+}

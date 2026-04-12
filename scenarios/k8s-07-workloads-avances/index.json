@@ -1,0 +1,33 @@
+{
+  "title": "Kubernetes — Workloads avancés",
+  "description": "Déployer un StatefulSet, un DaemonSet et maîtriser le scheduling avec taints et tolerations.",
+  "intro": {
+    "text": "intro.md"
+  },
+  "details": {
+    "steps": [
+      {
+        "title": "StatefulSet et DNS stable",
+        "text": "step1.md",
+        "verify": "step1/verify.sh",
+        "background": "step1/background.sh"
+      },
+      {
+        "title": "DaemonSet",
+        "text": "step2.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Scheduling avancé — taints et tolerations",
+        "text": "step3.md",
+        "verify": "step3/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes"
+  }
+}
