@@ -139,6 +139,31 @@
       "title": "Ansible — 9. APIs & Debug Variables",
       "description": "Playbook to call an API and debug variables.",
       "path": "ansible-09-apis-debug"
+    },
+    {
+      "title": "Kubernetes — Quiz Théorique",
+      "description": "QCM de positionnement sur Kubernetes et l'architecture cloud native (concepts, pas la syntaxe fine).",
+      "path": "k8s-quiz-theorique"
+    },
+    {
+      "title": "Kubernetes — Premier contact",
+      "description": "Explorer un cluster kubeadm (control-plane + worker), kubectl, kube-system et premier Pod en YAML.",
+      "path": "k8s-01-premier-contact"
+    },
+    {
+      "title": "Kubernetes — Workloads",
+      "description": "Deployments, scaling, rolling update, rollback et exposition via un Service NodePort.",
+      "path": "k8s-02-workloads"
+    },
+    {
+      "title": "Kubernetes — Configuration",
+      "description": "ConfigMaps, Secrets, Namespaces et ResourceQuotas pour séparer config et code.",
+      "path": "k8s-03-configuration"
+    },
+    {
+      "title": "Kubernetes — Contrôle de connaissances (architecture)",
+      "description": "Quiz sur le control plane, les workers, le cycle de vie d'un déploiement, la réconciliation et le réseau/CNI.",
+      "path": "k8s-04-controle-connaissances"
     }
   ]
 }
