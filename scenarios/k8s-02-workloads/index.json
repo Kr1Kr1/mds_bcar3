@@ -1,0 +1,32 @@
+{
+  "title": "Kubernetes — Workloads : Deployments et Services",
+  "description": "Créer et gérer des Deployments, faire un rolling update, rollback et exposer l'application avec un Service.",
+  "intro": {
+    "text": "intro.md"
+  },
+  "details": {
+    "steps": [
+      {
+        "title": "Deployment et scaling",
+        "text": "step1.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Rolling update et rollback",
+        "text": "step2.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Service — exposer l'application",
+        "text": "step3.md",
+        "verify": "step3/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Kubernetes — Configuration : ConfigMaps, Secrets et Namespaces",
+  "description": "Séparer la configuration du code avec ConfigMaps et Secrets, isoler les environnements avec les Namespaces.",
+  "intro": {
+    "text": "intro.md"
+  },
+  "details": {
+    "steps": [
+      {
+        "title": "ConfigMaps — configuration non sensible",
+        "text": "step1.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Secrets — données sensibles",
+        "text": "step2.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Namespaces — isolation et quotas",
+        "text": "step3.md",
+        "verify": "step3/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes"
+  }
+}

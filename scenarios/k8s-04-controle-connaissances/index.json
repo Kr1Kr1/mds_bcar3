@@ -1,0 +1,35 @@
+{
+  "title": "Kubernetes — Contrôle de connaissances : Architecture",
+  "description": "Quiz interactif sur l'architecture Kubernetes : control plane, worker nodes, réconciliation et réseau. Basé sur le blog de Stéphane Robert.",
+  "intro": {
+    "text": "intro.md"
+  },
+  "details": {
+    "steps": [
+      {
+        "title": "Control Plane — API Server, etcd, Scheduler, Controller Manager",
+        "text": "step1.md",
+        "verify": "step1/verify.sh",
+        "background": "step1/background.sh"
+      },
+      {
+        "title": "Worker Nodes — Kubelet, Kube-proxy, Container Runtime",
+        "text": "step2.md",
+        "verify": "step2/verify.sh",
+        "background": "step2/background.sh"
+      },
+      {
+        "title": "Réconciliation, réseau et vision d'ensemble",
+        "text": "step3.md",
+        "verify": "step3/verify.sh",
+        "background": "step3/background.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}

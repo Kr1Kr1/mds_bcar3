@@ -1,0 +1,35 @@
+{
+  "title": "Kubernetes — Quiz Théorique",
+  "description": "QCM de positionnement sur Kubernetes : Cloud Native, architecture du cluster, workloads, services et configuration.",
+  "intro": {
+    "text": "intro.md"
+  },
+  "details": {
+    "steps": [
+      {
+        "title": "Cloud Native & orchestration de conteneurs",
+        "text": "step1.md",
+        "verify": "step1/verify.sh",
+        "background": "step1/background.sh"
+      },
+      {
+        "title": "Architecture Kubernetes (cluster, control plane, nodes)",
+        "text": "step2.md",
+        "verify": "step2/verify.sh",
+        "background": "step2/background.sh"
+      },
+      {
+        "title": "Workloads, services & configuration",
+        "text": "step3.md",
+        "verify": "step3/verify.sh",
+        "background": "step3/background.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
