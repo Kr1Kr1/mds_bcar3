@@ -164,6 +164,26 @@
       "title": "Kubernetes — Contrôle de connaissances (architecture)",
       "description": "Quiz sur le control plane, les workers, le cycle de vie d'un déploiement, la réconciliation et le réseau/CNI.",
       "path": "k8s-04-controle-connaissances"
+    },
+    {
+      "title": "Kubernetes — Bilan des fondamentaux",
+      "description": "Quiz sur Pods, ReplicaSets, Deployments, Services, ConfigMaps, Secrets, Namespaces, quotas et CoreDNS.",
+      "path": "k8s-05-bilan-fondamentaux"
+    },
+    {
+      "title": "Kubernetes — Administration du cluster",
+      "description": "Control plane, sauvegarde etcd avec etcdctl, intégrité des snapshots, drain et uncordon d'un nœud.",
+      "path": "k8s-06-administration"
+    },
+    {
+      "title": "Kubernetes — Workloads avancés",
+      "description": "StatefulSet, DaemonSet, et scheduling avec taints et tolerations sur un cluster kubeadm.",
+      "path": "k8s-07-workloads-avances"
+    },
+    {
+      "title": "Kubernetes — Réseau et stockage",
+      "description": "NetworkPolicies, Ingress multi-services HTTP, PersistentVolumeClaim et persistance des données.",
+      "path": "k8s-08-reseau-stockage"
     }
   ]
 }
